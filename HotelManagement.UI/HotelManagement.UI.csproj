@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{385E52FE-FEFD-4181-A300-5ECE47E87FD6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HotelManagement.UI</RootNamespace>
+    <AssemblyName>HotelManagement.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BookingRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\FloorRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Repositories\PermissionRepository.cs" />
+    <Compile Include="Repositories\RolePermissionRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\RoomRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewModels\BookingViewModel.cs" />
+    <Compile Include="ViewModels\IncomeViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\Supporter.cs" />
+    <Compile Include="ViewModels\TabsViewModel.cs" />
+    <Compile Include="ViewModels\UserManagementViewModel.cs" />
+    <Compile Include="Views\BookingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BookingView.Designer.cs">
+      <DependentUpon>BookingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IncomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\IncomeView.Designer.cs">
+      <DependentUpon>IncomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfoPaymentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InfoPaymentView.Designer.cs">
+      <DependentUpon>InfoPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PaymentView.Designer.cs">
+      <DependentUpon>PaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoomBookingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RoomBookingView.Designer.cs">
+      <DependentUpon>RoomBookingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoomPaymentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\RoomPaymentView.Designer.cs">
+      <DependentUpon>RoomPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserManagementView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserManagementView.Designer.cs">
+      <DependentUpon>UserManagementView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\BookingView.resx">
+      <DependentUpon>BookingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IncomeView.resx">
+      <DependentUpon>IncomeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InfoPaymentView.resx">
+      <DependentUpon>InfoPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PaymentView.resx">
+      <DependentUpon>PaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RoomBookingView.resx">
+      <DependentUpon>RoomBookingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RoomPaymentView.resx">
+      <DependentUpon>RoomPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserManagementView.resx">
+      <DependentUpon>UserManagementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\001-groom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Close.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\close %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelManagement.Database\HotelManagement.Database.csproj">
+      <Project>{1a09be54-ca27-4385-a69b-eaa8a3be11db}</Project>
+      <Name>HotelManagement.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagement.Model\HotelManagement.Model.csproj">
+      <Project>{b110518b-8bcf-4501-9147-e7ca5a91c11b}</Project>
+      <Name>HotelManagement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\001-user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\002-in-touch.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\002-priest.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\003-office.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\003-stationery.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\004-cashback.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\004-padlock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\005-gift-card.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\005-unlock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\006-content-creator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\006-settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\007-blogger.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\007-notification-bell.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\008-notification-bell-1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\008-social-engagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\009-creative-writing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\009-location.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\010-notification-bell-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\010-scan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\011-money.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\012-calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\013-user-1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\014-laptop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\015-shopping-cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\016-shopping-cart-1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\017-shopping-cart-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\018-house.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-binoculars-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-bookmark-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-bookmark-100-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-box-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-checked-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-clock-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-connect-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-contacts-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-cursor-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-delete-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-document-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-download-from-the-cloud-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-dribbble-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-edit-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-external-link-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-facebook-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-facebook-100-2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-female-user-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-file-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-folder-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-google-plus-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-home-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-image-file-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-info-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-instagram-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-key-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-linkedin-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-lock-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-mailbox-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-myspace-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-news-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-ok-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-opened-folder-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-padlock-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-picture-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-pinterest-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-plus-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-puzzle-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-reddit-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-refresh-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-restart-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-round-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-search-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-services-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-settings-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-share-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-stumbleupon-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-support-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\icons8-synchronize-100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\logoIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\images.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\images %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\hnet.com-image.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
